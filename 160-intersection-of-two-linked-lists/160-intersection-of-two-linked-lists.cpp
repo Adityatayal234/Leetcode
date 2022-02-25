@@ -10,9 +10,10 @@ class Solution {
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         ListNode*ptrA=headA,*ptrB=headB;
+        
         while (ptrA != ptrB) { 
-            ptrA = ptrA ? ptrA->next : headB;
-            ptrB = ptrB ? ptrB->next : headA;
+            ptrA = ptrA==NULL ? headB : ptrA->next;
+            ptrB = ptrB==NULL? headA :ptrB->next ;
         }
         return ptrA;
     }
