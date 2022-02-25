@@ -14,7 +14,7 @@ public:
             return false; 
         
         ListNode *slow = head;
-        ListNode *fast = head->next;
+        ListNode *fast = head->next->next;
         
         
         while(fast!=NULL && fast->next!=NULL){
