@@ -13,6 +13,7 @@ public:
         int ans=0;
         
         while(n>0){
+            
             int rem = n%10;
             ans+=pow(rem,num);
             n = n/10;
