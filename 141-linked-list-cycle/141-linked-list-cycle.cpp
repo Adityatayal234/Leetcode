@@ -10,19 +10,35 @@ class Solution {
 public:
     bool hasCycle(ListNode *head) {
         
-        if(head==NULL || head->next== NULL)
-            return false; 
+//         if(head==NULL || head->next== NULL)
+//             return false; 
         
-        ListNode *slow = head;
-        ListNode *fast = head->next->next;
+//         ListNode *slow = head;
+//         ListNode *fast = head->next->next;
         
         
-        while(fast!=NULL && fast->next!=NULL){
-            if(fast == slow)
+//         while(fast!=NULL && fast->next!=NULL){
+//             if(fast == slow)
+//                 return true;
+//             slow = slow->next;
+//             fast = fast->next->next;
+//         }
+//         return false;
+//    }
+        
+        map<ListNode*,int> hash;
+        
+        while(head!=NULL){
+            
+            if(hash.find(head)!= hash.end())
                 return true;
-            slow = slow->next;
-            fast = fast->next->next;
+            
+            hash[head] = 1;
+            head = head->next;
+            
         }
+        
         return false;
     }
+        
 };
