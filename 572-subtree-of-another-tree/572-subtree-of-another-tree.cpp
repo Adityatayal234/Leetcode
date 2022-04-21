@@ -39,13 +39,14 @@ public:
         if(root!=NULL){
             inorder(root->left, subRoot);
             
-           
+            bool x = match(root, subRoot);
+            if(x)
+            {
+                ans = x;
+            }
             
             inorder(root->right, subRoot);
-            
-            
-             bool x = match(root, subRoot);
-            if(x){ans = x;}
+       
         }
     }
     
