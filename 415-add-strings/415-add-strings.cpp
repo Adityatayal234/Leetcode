@@ -20,7 +20,8 @@ public:
             
             sum+=carry;
             carry = sum/10;
-            ans = ans+ to_string(sum%10);
+            sum = sum % 10;
+            ans = ans+ to_string(sum);
         }
         reverse(ans.begin(),ans.end());
         return ans;
